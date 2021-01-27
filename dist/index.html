@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="shortcut icon" href="img/logo/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Fudi</title>
+</head>
+<body>
+	<header id="header">
+	<div class="container">
+		<a href="#" class="logo"><img src="img/logo/logo.png" alt="logo"></a>
+		<nav class="nav-menu">
+			<a href="#logIn" class="item lightbox" data-toggle="modal" data-target="#LogInModalwindow">LOG IN</a>
+			<a href="#signUp" class="item lightbox" data-toggle="modal" data-target="#SingUPModalwindow">SIGN UP</a>
+			<nav class="menu-btn">
+				<a href="#" class="nav-opener">
+					<span></span>
+				</a>
+				<div class="nav-slide">
+					<ul class="nav-list">
+						<li><a href="#about-us">about-us</a></li>
+						<li><a href="#review">review</a></li>
+						<li><a href="#cuisines">cuisines</a></li>
+						<li><a href="#contact">contact</a></li>
+					</ul>
+				</div>
+			</nav>	
+		</nav>
+	</div>    
+</header>
+
+	<main id="main">
+	<section class="banner" id="banner">
+	<div class="container">
+		<div class="center">
+			<h2>Find your Favorite</h2>
+			<h1>RECIPES</h1>
+			<a href="#benefits" class="button">Get Started</a>
+			<p>OR SEND US YOUR OWN RECIPES AND <a href="#benefits">GET REWARDED!</a></p>
+		</div>
+	</div>
+</section>
+	<section class="modal">
+	<div class="popup-holder">
+		<div id="logIn" class="formBox">
+			<h2 class="modal-title">Log In</h2>
+			<form action="#">
+				<div class="form-row">
+					<input type="email" name="email" class="formControl" placeholder="Email" required>
+				</div>
+				<div class="form-row">
+					<input type="password" name="password" class="formControl" placeholder="Password" required>
+				</div>
+				<label class="form-check">
+					<input type='checkbox'>
+						<span></span>
+						Remember me
+				</label>
+				<button type="submit" class="FormButton">Log In</button>
+			</form>
+			<a class="close" href="#"><span></span></a>
+		</div>
+		<div id="signUp" class="formBox">
+			<h2 class="modal-title">Sign Up</h2>
+			<form>
+				<div class="form-row">
+					<input type="text" name="NameUser" class="formControl" placeholder="Name" required>
+				</div>
+				<div class="form-row">
+					<input type="email" name="email" class="formControl" placeholder="Email" required>
+				</div>
+				<div class="form-row">
+					<input type="password" name="password" class="formControl" placeholder="Password" required>
+				</div>
+				<div class="form-row">
+					<input type="password" name="RettypePassword" class="formControl" placeholder="Retype Password" required>
+				</div>
+				<label class="form-check">
+					<input type='checkbox'>
+						<span></span>
+						Remember me
+				</label>
+
+				<button type="submit" class="FormButton">Sing Up</button>
+			</form>
+			<a class="close" href="#"><span></span></a>
+		</div>
+	</div>
+</section>
+	<section class="benefits" id="benefits">
+	<div class="container">
+		<ul class="benefits-list">
+			<li>
+				<div class="icon">
+					<img src="img/benefits/burger.png" alt="icon">
+				</div>
+				<h4>GET INSPIRED</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
+			</li>
+			<li>
+				<div class="icon">
+					<img src="img/benefits/money.png" alt="icon">
+				</div>
+				<h4>GET INSPIRED</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat.</p>
+			</li>
+			<li>
+				<div class="icon">
+					<img src="img/benefits/cook.png" alt="icon">
+				</div>
+				<h4>GET INSPIRED</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra elementuma. Aliquam erat volutpat. </p>
+			</li>
+		</ul>
+		
+	</div>
+</section>
+	<section id="about-us" class="about-us">
+	<div class="container">
+		<div class="iphone">
+			<img src="img/about-us/iphone-bg.png" alt="iphone">
+		</div>
+		<div class="description">
+			<h4 class="title">INTRODUCING THE FUDI APP</h4>
+			<p>Morbi eget posuere dolor. Pellentesque cursus aliquet aliquet. Aeneanet 
+			felis sit amet diam mollis ullamcorper. Nullam consequat sem a ante vest
+			ibulum tristique. Suspendisse tristique lacus ac mattis porta. </p>
+			<p>
+			Vivamus ligula quam, vehicula non lacinia sed, faucibus sit amet libero. In 
+			libero dui, eleifend eu nisi id, egestas fringilla odio. In varius quam a mas
+			sa hendrerit ullamcorper a eu justo. Suspendisse porta mattis convallis. 
+			Aenean tempus ligula ac odio rhoncus, quis aliquam dolor accumsan.</p>
+			<p>
+			Suspendisse aliquet felis consectetur libero congue, sed pulvinar diam 
+			malesuada. Duis vehicula a nibh id hendrerit. Donec sit amet ultrices 
+			ante, a mattis massa.</p>
+			<div class="images">
+				<img src="img/about-us/app-store.png" alt="app-store">
+				<img src="img/about-us/google-play.png" alt="google-pla">
+			</div>
+		</div>
+	</div>
+</section>
+	<section id="review" class="review">
+	<div class="container slick-slider">
+		<div class="slide">
+			<img src="img/review/user.png" alt="foto-user">
+			<blockquote class="comment">
+				I am so happy because I found this recipe, and it just made my life easier.
+				Thanks  so much for sharing!
+			</blockquote>
+			<figure  class="name-user">
+				Michael Dawson, San Francisco, CA
+			</figure>
+		</div>
+		<div class="slide">
+			<img src="img/review/user.png" alt="foto-user">
+			<blockquote class="comment">
+				Just made my life easier.
+				Thanks  so much for sharing!
+			</blockquote>
+			<figure class="name-user">
+				David Dawson, Ukraine
+			</figure>
+		</div>
+		<div class="slide">
+			<img src="img/review/user.png" alt="foto-user">
+			<blockquote class="comment">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum tempore debitis placeat at obcaecati eaque dolores velit deleniti nulla, necessitatibus!.
+				Thanks  so much for sharing!
+			</blockquote>
+			<figure class="name-user">
+				Dawson, San Francisco, CA
+			</figure>
+		</div>
+	</div>
+</section>
+	<section id="cuisines" class="cuisines">
+	<h2>BROWSE BY CUISINES</h2>
+	<ul class="ricepes">
+		<li style="background-image: url(img/recipe/italian.jpg);">
+			<a href="#">
+				<span>327 Recipes</span>
+				<h3 class="title">italian</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/indian.jpg);">
+			<a href="#">
+				<span>856 Recipes</span>
+				<h3 class="title">indian</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/french.jpg);">
+			<a href="#">
+				<span>27 Recipes</span>
+				<h3 class="title">french</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/steakhouse.jpg);">
+			<a href="#">
+				<span>174 Recipes</span>
+				<h3 class="title">steakhouse</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/seafood.jpg);">
+			<a href="#">
+				<span>731 Recipes</span>
+				<h3 class="title">seafood</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/sushi.jpg);">
+			<a href="#" class="ricepe-block">
+				<span>237 Recipes</span>
+				<h3 class="title">sushi</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/mexican.jpg);">
+			<a href="#">
+				<span>529 Recipes</span>
+				<h3 class="title">mexican</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/chinese.jpg);">
+			<a href="#">
+				<span>145 Recipes</span>
+				<h3 class="title">chinese</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/pizza.jpg);">
+			<a href="#">
+				<span>327 Recipes</span>
+				<h3 class="title">pizza</h3>
+			</a>
+		</li>
+		<li style="background-image: url(img/recipe/american.jpg);">
+			<a href="#">
+				<span>1.437 Recipes</span>
+				<h3 class="title">american</h3>
+			</a>
+		</li>	
+	</ul>
+</section>
+	<section class="progress">
+	<div class="container">
+		<ul>
+			<li>
+				<span class="number">23567</span>
+				<span class="name">Recipes Available</span>
+			</li>
+			<li>
+				<span class="number">431729</span>
+				<span class="name">Active Users</span>
+			</li>
+			<li>
+				<span class="number">892173</span>
+				<span class="name">Positive Reviews </span>
+			</li>
+			<li>
+				<span class="number">56581</span>
+				<span class="name">Photos & Videos</span>
+			</li>
+			<li>
+				<span class="number">3182</span>
+				<span class="name">Spices and Herbs </span>
+			</li>			
+		</ul>
+
+	</div>
+</section>
+	</main>
+	<footer id="footer">
+	<div class="container">
+		<span class="copyright">©2014 Fudi. All Rights Reserved.</span>
+		<p class="link">DESIGN BY: <a href="#">WWW.BEKADES.COM</a></p>
+	</div>
+</footer>
+	
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/jquery.main.js"></script>
+</body>
+</html>
