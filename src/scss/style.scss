@@ -1,0 +1,581 @@
+@import "mixin";
+@import "variables";
+@import "nullstyle";
+@import "fonts";
+@import "_slick";
+@import "_burger";
+@import "_fancybox";
+
+
+html{
+	scroll-behavior: smooth;
+}
+body{
+	font-family: "lato";
+	font-size: 16px;
+	line-height: 1.2;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+.container{
+	@include container(100%, 1180px, 0 auto);
+	padding: 0 15px;
+	height: 100%;
+}	    
+header{
+	position: absolute;
+    z-index: 2;
+    width: 100%;
+	.container{
+		@include flexCenter;
+		justify-content: space-between;
+		padding-top: 20px;		
+	}
+	.nav-menu{
+		z-index: 99; 	
+		@include flexCenter;
+		a{
+			text-decoration: none;
+			position: relative;
+			margin-right: 30px;
+			@include Fs-Fw(14px, 700);
+			color: $mainColor;
+			text-transform: uppercase;
+			transition: .2s border-bottom;
+			@media (max-width: 500px){
+				margin-right: 15px;
+			}
+			&.item:after{
+				position: absolute;
+				content: "";
+  				display: block;
+				width: 100%;
+				height: 2px;
+				background: #fff;
+				bottom: -10px;
+				opacity: 0;
+				transition: .2s opacity;
+			}
+			&.item:hover:after{
+				opacity: 1;
+				transition: .2s opacity;
+			}
+		}
+	}
+}
+.popup-holder {
+	display: none;
+}
+.formBox{
+	padding: 30px 40px 10px;
+	overflow: hidden;
+	@media (max-width: 425px){
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+.modal-title{
+		@include Fs-Fw(28px, 700);
+		text-align: center;
+		margin-bottom: 30px;
+		color: #3399ff;
+}
+.form-row{
+	.formControl{
+		font-size: 16px;
+		margin-bottom: 30px;
+		display: block;
+		width: 100%;
+		padding: 5px 15px;
+		border-bottom: 1px solid #3399ff;
+	}
+}
+input[type=checkbox] {
+	display: none; // Hide the default checkbox 
+}
+
+ // Style the artificial checkbox 
+.form-check{
+	display: block;
+	padding-bottom: 40px;
+	color: #707070;
+	font-size: 16px;
+}
+.form-check span {
+	padding-right: 6px;
+	height: 15px;
+	width: 15px;
+	border: 1px solid #707070;
+	display: inline-block;
+	position: relative;
+}
+/* Style its checked state...with a ticked icon */
+[type=checkbox]:checked + span:before {
+	content: '\2714';
+	font-size: 20px;
+	position: absolute;
+	top: -10px;
+	left: 0;
+}
+.FormButton{
+	font-size: 16px;
+	padding: 20px;
+	background: #3399ff;
+	width: 100%;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	transition: .2s background;
+	&:hover{
+		background: #333;
+		transition: .2s background;
+		color: #fff;
+	}
+}
+.banner{
+	position: relative;
+	background-image: url("../img/banner.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	min-height: 100vh;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+
+	&:after{
+		position: absolute;
+		display: block;
+		content: "";
+		z-index: 1;
+		width: 100%;
+		height: 20%;
+		background: linear-gradient(transparent, #000);
+		bottom: 0;
+		opacity: .67;
+	}
+	.container{
+		min-height: 100vh;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	h2{
+		font-family: "times new roman";
+		font-size: 36px;
+		font-weight: bold;
+		font-style: italic;
+		opacity: .7;
+		@media (max-width: 1024px) {
+			font-size: 30px;
+		}
+		@media (max-width: 500px){
+			margin: 5px;
+			font-size: 25px;
+		}
+	}
+	h1{
+		@include Fs-Fw(100px, 700);
+		letter-spacing: 5px;
+		@media (max-width: 1024px) {
+			font-size: 90px;
+		}
+		@media (max-width: 500px){
+			font-size: 65px;
+		}
+	}
+	.button{
+		display: inline-block;
+		color: $mainColor;
+		@include Fs-Fw(18px, 700);
+		text-transform: uppercase;
+		padding: 20px 75px;
+		border: 3px solid #fff;
+		border-radius: 3px;
+		margin: 40px auto;
+		width: 70%;
+		transition: .2s background ;
+		&:hover{
+			background: #fff;
+			color: #222;
+			transition: .2s background;
+		}
+		@media (max-width: 1024px) {
+			padding: 15px 65px;
+		}
+		@media (max-width: 500px){
+			padding: 10px;
+			font-size: 16px;
+		}
+	}
+	p{
+		@include Fs-Fw(14px, 500);
+		a{
+			color: #fff;
+			font-weight: 700;	
+			text-decoration: underline;
+		}
+	}
+}
+.benefits{
+	color: $secondColor;
+	padding: 75px 0;
+}
+.benefits-list{
+	margin: 0 -15px;
+	@include flexCenter;
+	@media (max-width: 768px){
+		display: block;
+	}
+	li{
+		padding: 0 15px;
+		width: 33.33%;
+		text-align: center;
+		@media (max-width: 768px){
+			width: 100%;
+			padding-bottom: 30px;
+		}
+	}
+	.icon{
+		width: 100px;
+		height: 100px;
+		margin: $marginAuto;
+		margin-bottom: 15px;
+		border: 2px solid #000;
+		border-radius: 50px;
+		@include flexCenter;
+	}
+	h4{
+		text-align: center;
+		margin-bottom: 15px;
+		@include Fs-Fw(18px, 700);
+		&:after{
+			@include afterLine;
+			margin: 7px auto 15px;			
+		}
+	}
+	p{
+		line-height: 1.5;
+		font-weight: 300;
+	}
+}
+.about-us{
+	position: relative;
+	background: #f7f7f7;
+	padding: 80px 0 0;
+	.container{
+		display: flex;
+	}
+}	
+.iphone{
+	width: 50%;
+	display: flex;
+	padding-right: 70px;
+	@media (max-width: 768px) {
+		position: absolute;
+		bottom: -80px;
+		right: 0;
+		width: 250px;
+		height: 300px;
+		padding-right: 15px;
+	}
+	img, picture{
+		align-self: flex-end;
+		max-height: 100%;
+	}
+}
+
+.description{
+	width: 40%;
+	@media (max-width: 768px) {
+		padding-bottom: 120px;
+		width: 100%;
+	}
+	@media (max-width: 500px) {
+		padding-bottom: 200px;
+	}
+	.title{
+		@include Fs-Fw(18px, 700);
+		text-transform: uppercase;
+		padding-bottom: 20px;
+		&:after{
+			@include afterLine;
+			margin: 7px 0 15px;
+		}
+	}
+	p{
+		margin-bottom: 15px;
+		font-weight: 300;
+		line-height: 1.5;
+	}
+	.images{
+		display: flex;
+		padding: 30px 0;
+		img{
+			padding-right: 10px;
+		}
+	}
+}	
+.review{
+	position: relative;
+	background: #4a3949;
+	padding: 80px 0 120px;
+	&:after{
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		display: block;
+		content: "";
+		background: url("../img/review/review-bg.png") no-repeat center;
+		background-size: cover;
+	}
+	.container{		
+		width: 100%;
+		height: 100%;
+	}	
+	.slick-slider{
+		width: 100%;
+		.slide{
+			width: 70%;
+			z-index: 1;
+			color: $mainColor;
+			text-align: center;
+			@media (max-width: 1024px) {
+				width: 90%;
+			}
+			img{
+				margin: 0 auto;
+			}
+	}
+	.comment{
+		margin-top: 10px;
+		@include Fs-Fw(30px, 100);
+		line-height: 1.4;
+		&:before{
+			content: "“";
+			display: inline-block;
+		}
+		&:after{
+			content: "”";
+			display: inline-block;
+		}
+		@media (max-width: 768px) {
+			font-size: 20px;
+			line-height: 1.3;
+		}
+		@media (max-width: 425px) {
+			font-size: 18px;
+			line-height: 1.3;
+		}
+	}
+	.name-user{
+		display: block;
+		margin-top: 20px;
+		@include Fs-Fw(18px, 100);
+		font-style: italic;
+		&:before{
+			content: " - ";
+			display: inline-block;
+		}
+		&:after{
+			content: " - ";
+			display: inline-block;
+		}
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+
+	}
+}
+
+}
+.slick-dots {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	bottom: -70px;
+	@include centerAbsolute;
+	z-index: 3;
+	li{
+		appearance: none;
+		outline: none;
+		width: 1rem;
+		height: 1rem;
+		border-radius: .5rem;
+		background: #fff;
+		margin: .5rem;
+		transition: background .2s .2s ease-out, .2s opacity;
+		opacity: .2;
+		button{
+			font-size: 0;
+		}
+		&.slick-active{
+			background: #fff;
+			opacity: 1;
+		}
+		&:hover{
+			cursor: pointer;
+			opacity: 1;
+			transition: .2s opacity;
+		}
+	}			 
+}
+.cuisines{
+	margin-top: 100px;
+	h2{
+		@include Fs-Fw(18px, 700);
+		text-transform: uppercase;
+		color: #000;
+		text-align: center;
+		margin: 0 auto 50px;
+		&:after{
+			@include afterLine;
+			margin: 7px auto 0;
+		}	
+	}
+}
+.ricepes{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	li{
+		background-size: cover;
+		background-position: center;
+		width: 20%;
+	    position: relative;
+	    min-height: 220px;
+	    @include flexCenter;
+		@media (max-width: 1440px){
+			width: 25%;
+		}
+		@media (max-width: 1200px){
+			width: 33.3%;
+		}
+		@media (max-width: 1000px){
+			width: 50%;
+		}
+		@media (max-width: 540px){
+			width: 100%;
+		}
+	}	
+	a{
+		height: 100%;
+		width: 100%;
+	    @include flexCenter;
+	    flex-wrap: wrap;
+	    flex-direction: column;
+	    z-index: 1;
+	    color: #fff;
+	    height: 100%;
+	    width: 100%;
+			&:after{
+				position: absolute;
+				content: "";
+				display: block;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background: $accentColor;
+				z-index: -1;
+				opacity: 0;
+				transition: .4s opacity;
+			}
+			&:hover:after{
+				opacity: .9;
+				transition: .3s opacity;
+			}
+	}
+	
+	.title{
+		text-transform: uppercase;
+		@include Fs-Fw(36px, 700);
+		line-height: 1.2;
+	}
+	span{
+		font-family: "times new roman";
+		font-style: italic;
+		font-weight: bold;
+	}
+}
+
+.progress{
+	padding: 60px 0;
+	.container{
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+			font-size: 25px;
+		}
+	}	
+	ul{
+		@include flexCenter;
+		@media (max-width: 500px){
+			flex-wrap: wrap;
+		}
+		li{
+			text-align: center;
+			@media (max-width: 500px){
+				margin: 20px 10px;
+				width: 40%;
+			}
+		}
+	}
+	.number{
+		margin-bottom: 10px;
+		padding: 0 50px;
+		display: block;
+		@include Fs-Fw(36px, 700);
+		@media (max-width: 1000px){
+			padding: 0 20px;
+		}
+		@media (max-width: 768px){
+			font-size: 25px;
+		}
+	}
+	.name{
+		display: block;
+		font-weight: 300;
+		@media (max-width: 768px){
+			font-size: 14px;
+		}
+	}
+}
+#footer{
+	border-top: 1px solid #e2e2e2;
+	background: #f7f7f7;
+	.container{
+		padding: 40px 15px;
+		@include flexCenter;
+		justify-content: space-between;
+		color: #8b8b8b;
+		@include Fs-Fw(14px, 300);
+		@media (max-width: 768px){
+			font-size: 11px;
+		}
+	}	
+	.link{
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		text-align: right;
+		a{
+			@include Fs-Fw(14px, 700);
+			color: #000;
+
+			&:hover{
+				border-bottom: 2px solid #000;
+			}
+			@media (max-width: 768px){
+			font-size: 11px;
+		}
+		}
+	}
+}
+

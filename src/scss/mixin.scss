@@ -1,0 +1,39 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+@mixin container($width, $max-width, $margin){
+	width: $width;
+	max-width: $max-width;
+	margin: $margin;
+}
+
+@mixin Fs-Fw($font-size, $font-weight){
+	font-size: $font-size;
+	font-weight: $font-weight;
+}
+
+@mixin flexCenter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin afterLine{
+	content: "";
+	display: block;
+	width: 88px;
+	height: 1px;
+	background: $accentColor;
+}
+
+@mixin centerAbsolute{
+	left: 0; 
+	right: 0; 
+}
